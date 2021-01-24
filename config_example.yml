@@ -1,0 +1,22 @@
+hue:
+  host: 192.168.0.1
+  api_key: api_key_goes_here
+  primary:
+    - 1
+    - 3
+  secondary:
+    - 2
+    - 4
+sonos:
+  host: 192.168.0.2:1400
+amiibo:
+  049917F29A3D80:
+    name: Mario
+    track: https://fi.zophar.net/soundfiles/nintendo-64-usf/super-mario-64/09a%20Dire%2C%20Dire%20Docks.mp3
+    primary: FF0000
+    secondary: 0000FF
+  0489F832724080:
+    name: Ness
+    track: https://earthboundcentral.com/wp-content/uploads/2015/04/Pollyanna.mp3
+    primary: 00FFFF
+    secondary: 0000FF
