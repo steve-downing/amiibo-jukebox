@@ -38,12 +38,13 @@ class AmiiboReader
   private
 
   def process_tag(tag)
-    character_name = @amiibo_map[tag.uid]
+    char_info = @amiibo_map[tag.uid]
+    character_name = char_info['name']
     puts "#{tag.uid}:#{character_name}"
-    # tag.print_details
-
-    char_info = @amiibo_map[character_name]
-    return unless char_info
+    unless char_info
+      puts 'Char info not found'
+      return
+    end
 
     if @sonos
       mp3_url = char_info['track']
@@ -54,9 +55,9 @@ class AmiiboReader
       end
     end
 
+    primary = char_info['primary']
+    secondary = char_info['secondary']
     if primary && secondary && @hue
-      primary = char_info['primary']
-      secondary = char_info['secondary']
       @hue.set_colors(primary, secondary)
     end
   end
